@@ -1,6 +1,14 @@
 from pyramid.view import view_config
 
 
-@view_config(route_name='home', renderer='../templates/home_index.pt')
+def get_test_packages():
+    return [
+        {"name": "requests", "version": "1.2.3"},
+        {"name": "sqlalchemy", "version": "2.0.0"},
+        {"name": "pyramid", "version": "1.9.1"},
+    ]
+
+
+@view_config(route_name="home", renderer="../templates/home_index.pt")
 def home_index(request):
-    return {'project': 'Python Package Index'}
+    return {"packages": get_test_packages()}
