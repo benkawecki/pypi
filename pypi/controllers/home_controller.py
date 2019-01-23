@@ -16,4 +16,4 @@ def home_index(request):
 
 @view_config(route_name="about", renderer="pypi:templates/home/about.pt")
 def about(request):
-    return {"packages": get_test_packages()}
+    return {"packages": None}
