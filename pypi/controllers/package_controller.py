@@ -45,3 +45,12 @@ def home_index(request: Request):
         "release_version": release_version,
         "releases": [],
     }
+
+
+@view_config(route_name="popular", renderer="pypi:templates/packages/details.pt")
+def package_details(request: Request):
+    num = int(request.matchdict.get("num", -1))
+    if not (num >= 1 and num <= 10):
+        raise x.HTTPNotFound()
+
+    return {"package_name": f"The {num}th popular package"}
