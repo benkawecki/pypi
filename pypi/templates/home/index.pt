@@ -2,12 +2,45 @@
     <div metal:fill-slot="content">
 
         <div class="content">
-            <h1>Some Packages</h1>
-            <div class="packages" tal:repeat="p packages">
-                <span class="title">${p.name}</span>
-                <span class="version" tal:condition="p.version">${p.version}</span>
-                <span class="version" tal:condition="not p.version">0.0.0</span>
+
+            <div class="hero">
+
+                <h1>
+                    Find, install and publish Python <br>
+                    with the Python Package Index
+                </h1> 
+
+                <input type="text" class="form-control" placeholder=" Search Projects"/>
+
+                <br>
+                <br>
+                <br>
+
+                Or <a href="#">browse projects</a>
             </div>
+            
+            <div class="pypi-stats">
+                <div class="stat">0 Projects</div>
+                <div class="stat">0 Releases</div>
+                <div class="stat">0 Users</div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 project-list">
+                        <h2>New Releases</h2>
+                        <span class="subtitle">The hottest New Releases</span>
+                        <div class="project" tal:repeat="p packages">
+                            <div class="title"><a href="">${p.name}</a> ${p.version}</div>
+                            <div class="desc">The Description</div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+
         </div>
 
     </div>
