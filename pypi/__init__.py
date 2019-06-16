@@ -34,11 +34,11 @@ def init_routing(config):
     config.add_route("package_details", "project/{package_name}")
     config.add_route("package_details/", "project/{package_name}/")
 
-    config.add_route("releases", "project/{package_name}/releases")
-    config.add_route("releases/", "project/{package_name}/releases/")
+    config.add_route("releases", "/project/{package_name}/releases")
+    config.add_route("releases/", "/project/{package_name}/releases/")
 
     config.add_route(
-        "release_version", "project/{package_name}/releases/{release_version}"
+        "release_version", "/project/{package_name}/releases/{release_version}"
     )
 
     # ################ ACCOUNT ###################
